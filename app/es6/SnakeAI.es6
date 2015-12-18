@@ -26,9 +26,9 @@ module.exports = class SnakeAI {
 		var distance = this.calculateDistance(this.game.head, this.game.food);
 
 		var preference = [
-			directionArr[directionIndex],
-			directionArr[(directionIndex + 3) % 4],
-			directionArr[(directionIndex + 1) % 4],
+			directionArr[(directionIndex + 1) % 4], // Turn right
+			directionArr[directionIndex],           // Go forward
+			directionArr[(directionIndex + 3) % 4], // Turn left
 		];
 
 		var i, direction;
