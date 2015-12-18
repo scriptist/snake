@@ -1,5 +1,15 @@
 {
-  "name": "snake",
-  "dependencies": {
-  }
+	"name": "snake",
+	"main": [
+	"app/es6/Snake.es6",
+	"app/scss/snake.scss",
+	],
+	"moduleType": "node",
+	"ignore": [
+		"*",
+		"!app/es6/Snake.es6",
+		"!app/es6/SnakeAI.es6"
+	],
+	"dependencies": {
+	}
 }
