@@ -63,6 +63,10 @@ module.exports = class Snake {
 		};
 	}
 
+	get head() {
+		return this.snake[this.snake.length - 1];
+	}
+
 	createFood() {
 		var x, y;
 
@@ -148,9 +152,8 @@ module.exports = class Snake {
 	}
 
 	step() {
-		var head = this.snake[this.snake.length - 1];
 		var newSquare = {};
-		[newSquare.x, newSquare.y] = this.directions[this.direction].delta(head.x, head.y);
+		[newSquare.x, newSquare.y] = this.directions[this.direction].delta(this.head.x, this.head.y);
 
 		// Test for collision
 		var collision = this.testCollision(newSquare.x, newSquare.y);
