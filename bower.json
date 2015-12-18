@@ -1,8 +1,8 @@
 {
 	"name": "snake",
 	"main": [
-	"app/es6/Snake.es6",
-	"app/scss/snake.scss",
+		"app/es6/Snake.es6",
+		"app/scss/snake.scss"
 	],
 	"moduleType": "node",
 	"ignore": [
