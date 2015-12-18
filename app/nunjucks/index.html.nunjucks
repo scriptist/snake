@@ -1,5 +1,9 @@
 {% extends "_layout.html.nunjucks" %}
+{% block scripts %}
+	<script>
+		window.snake = new Snake({ai: SnakeAI});
+	</script>
+{% endblock %}
 {% block content %}
-	<h1>Home</h1>
-	Hello!
+	<h1>Test Page</h1>
 {% endblock %}

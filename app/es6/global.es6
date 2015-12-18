@@ -1,6 +1,4 @@
 'use strict';
 
-((window, console) => {
-	console.log('Hello!');
-	console.log('There');
-})(window, window.console);
+window.Snake = require('Snake.es6');
+window.SnakeAI = require('SnakeAI.es6');

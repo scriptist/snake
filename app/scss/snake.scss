@@ -1,0 +1,18 @@
+.snake__food, .snake__seg {
+	border: 1px solid white;
+	box-sizing: border-box;
+
+	position: absolute;
+	top: 0;
+	left: 50%;
+
+	z-index: -1;
+}
+
+.snake__seg {
+	background: black;
+}
+
+.snake__food {
+	background: red;
+}

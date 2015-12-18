@@ -2,13 +2,14 @@
 <html>
 <head>
 
-	<title>{% block title %}Generator TLDR - Static{% endblock %}</title>
+	<title>{% block title %}Snake.js{% endblock %}</title>
 	<meta charset='utf-8' />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
 	<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" media="all" href="/css/global.css" />
+	<link rel="stylesheet" media="all" href="/css/snake.css" />
 	<link rel="icon" type="image/png" href="/image/favicon.png" />
 </head>
 <body>
