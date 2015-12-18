@@ -6,6 +6,7 @@ var defaultOptions = {
 	parent: document.body,
 	interval: 100,
 	size: 20,
+	spacing: 1,
 	ai: false,
 };
 
@@ -201,8 +202,8 @@ module.exports = class Snake {
 	}
 
 	positionSquare(element, x, y) {
-		element.style.width  = this.options.size + 'px';
-		element.style.height = this.options.size + 'px';
+		element.style.width  = this.options.size - this.options.spacing * 2 + 'px';
+		element.style.height = this.options.size - this.options.spacing * 2 + 'px';
 		element.style.marginTop  = y * this.options.size + 'px';
 		element.style.marginLeft = (x - 0.5) * this.options.size + 'px';
 	}
