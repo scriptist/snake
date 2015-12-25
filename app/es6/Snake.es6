@@ -1,6 +1,6 @@
 'use strict';
 
-require('object-assign-polyfill.es6');
+require('./object-assign-polyfill.es6');
 
 var defaultOptions = {
 	parent: document.body,
