@@ -7,6 +7,7 @@
 	"moduleType": "node",
 	"ignore": [
 		"*",
+		"!app/es6/object-assign-polyfill.es6",
 		"!app/es6/Snake.es6",
 		"!app/es6/SnakeAI.es6"
 	],
