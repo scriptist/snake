@@ -23,6 +23,7 @@ function getRandomIntInclusive(min, max) {
 
 module.exports = class Snake {
 	constructor(options) {
+		this.started = false;
 		this.directions = {
 			up: {
 				delta: (x, y) => [x, y - 1],
@@ -42,7 +43,6 @@ module.exports = class Snake {
 			},
 		};
 		this.options = Object.assign({}, defaultOptions, options);
-		this.interval = setInterval(() => this.step(), this.options.interval);
 
 		// Bind to events
 		window.addEventListener('keydown', (e) => this.onKeyDown(e));
@@ -81,8 +81,21 @@ module.exports = class Snake {
 		this.draw();
 	}
 
+	destroy() {
+		if (!this.started)
+			return;
+
+		this.removalQueue.push(this.food);
+		this.snake.forEach(seg => this.removalQueue.push(seg));
+		this.draw();
+
+		window.clearInterval(this.interval);
+		this.interval = null;
+		this.started = false;
+	}
+
 	die() {
-		console.log('You died');
+		// console.log('You died');
 		this.start(true);
 	}
 
@@ -134,10 +147,9 @@ module.exports = class Snake {
 
 	start(clean) {
 		if (clean) {
-			// First clean up old elements
-			this.removalQueue.push(this.food);
-			this.snake.forEach(seg => this.removalQueue.push(seg));
-			this.draw();
+			this.destroy();
+		} else if (this.started) {
+			return;
 		}
 
 		this.food = {x: null, y: null};
@@ -150,6 +162,9 @@ module.exports = class Snake {
 		if (this.options.ai) {
 			this.ai = new this.options.ai(this);
 		}
+
+		this.interval = this.interval || setInterval(() => this.step(), this.options.interval);
+		this.started = true;
 	}
 
 	step() {
